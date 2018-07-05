@@ -1,0 +1,32 @@
+{% extends "::baselogin.html.twig" %}
+{% block title %}Connexion{% endblock %} 
+{% block header %} {% endblock %}
+{% block menuleft %} {% endblock %}
+{% block body %}
+    <body class="login">
+        <div>
+            <div class="login_wrapper">
+                <div class="animate form login_form">
+                    <section class="login_content">
+                        <form  action="{{ path("verifconnexion")}}" method="POST">
+                            {% include "::msg.html.twig" %}
+                            <h1>Login Form</h1>
+                            <div>
+                                <input id="login" name="login" type="text" class="form-control" placeholder="Nom d'utilisateur" required="" />
+                            </div>
+                            <div>
+                                <input id="mp"  name="mp" type="password" class="form-control" placeholder="Mot de passe" required="" />
+                            </div>
+                            <div>
+                                <button class="btn btn-default submit" type="submit">Connexion <i class="glyphicon glyphicon-log-in"></i></button>
+                                <a href="{{path("home")}}register">Nouveau compte</a>
+                            </div>
+                            <div class="separator">
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </body>
+{% endblock %}

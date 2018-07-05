@@ -1,0 +1,27 @@
+home:
+    path:     /
+    defaults: { _controller: FIVEPOINTSChatBundle:Account:getlogin }  
+register:
+    path:     /register
+    defaults: { _controller: FIVEPOINTSChatBundle:Account:register }  
+account_store:
+    pattern:  /account/store
+    defaults: { _controller: FIVEPOINTSChatBundle:Account:store }
+login:
+    path:     /login
+    defaults: { _controller: FIVEPOINTSChatBundle:Account:getlogin }    
+verifconnexion:
+    path:     /verifconnexion
+    defaults: { _controller: FIVEPOINTSChatBundle:Account:postlogin }       
+conversation_home:
+    path:     /home
+    defaults: { _controller: FIVEPOINTSChatBundle:Conversation:home }  
+conversation:
+    pattern:  /conversation/{id}
+    defaults: { _controller: FIVEPOINTSChatBundle:Conversation:getmessage }
+message_store:
+    pattern:  /message/store
+    defaults: { _controller: FIVEPOINTSChatBundle:Conversation:store }    
+logout:
+    path:     /logout
+    defaults: { _controller: FIVEPOINTSChatBundle:Account:logout }       

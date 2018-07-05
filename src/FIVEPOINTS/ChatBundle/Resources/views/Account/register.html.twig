@@ -1,0 +1,76 @@
+{% extends "::baselogin.html.twig" %}
+{% block nav %} {% endblock %}
+{% block menu %}{% endblock %}
+{% block title %} Nouveau compte{% endblock %} 
+{% block header %} {% endblock %}
+{% block menuleft %} {% endblock %}
+
+{% block body %}
+
+    <div class="container">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Inscription</h3>
+            </div>
+            <div class="panel-body">
+                {% include "::msg.html.twig" %}
+                <form action="{{path("account_store")}}" class="form-horizontal" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="nom" class="control-label col-xs-2">Nom *</label>
+                        <div class="col-xs-3">
+                            <input required type="text" class="form-control" id="nom"  name="nom" placeholder="Nom" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="prenom" class="control-label col-xs-2">Prenom *</label>
+                        <div class="col-xs-3">
+                            <input required type="text" class="form-control" id="prenom"  name="prenom" placeholder="Prenom" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mp" class="control-label col-xs-2">Mot de passe *</label>
+                        <div class="col-xs-3">
+                            <input  required type="password" class="form-control" id="mp"  name="mp" placeholder="Mot de passe" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mp_2" class="control-label col-xs-2">Confirmer le mot de passe *</label>
+                        <div class="col-xs-3">
+                            <input  required type="password" class="form-control" id="mp_2"  name="mp_2" placeholder="Confirmer le mot de passe" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="login" class="control-label col-xs-2">Login *</label>
+                        <div class="col-xs-3">
+                            <input required type="text" class="form-control" id="login"  name="login" placeholder="Login" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mail" class="control-label col-xs-2">Mail *</label>
+                        <div class="col-xs-3">
+                            <input required type="text" class="form-control" id="mail"  name="mail" placeholder="Mail" value="">
+                        </div>
+                    </div>
+
+                    <div class="separator">
+                        <div class="form-group">
+                            <div class="col-xs-offset-2 col-xs-10">
+                                <button type="submit" class="btn btn-primary">Sauvegarder</button>
+                                <a href="{{path("home")}}login">Se connecter</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <input type="hidden" id="id" name="id" value=""/>
+                    <input type="hidden" id="valider" name="valider" value="0"/>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+{% endblock %}
